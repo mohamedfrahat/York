@@ -15,20 +15,20 @@ export default function TopBar() {
   };
 
   const handleLinkClick = () => {
-    setIsOpen(false); 
+    setIsOpen(false);
   };
 
   const handleOpenModal = () => {
     setIsOpen(false);
-    setShowModal(true); 
+    setShowModal(true);
   };
 
   const handleCloseModal = () => {
-    setShowModal(false); 
+    setShowModal(false);
   };
 
   return (
-    <div className="Topbar d-flex justify-content-between align-items-center px-2">
+    <div className="Topbar d-flex justify-content-between align-items-center ">
       {/* Hamburger button for mobile view */}
       <button className="menu-button d-md-none" onClick={toggleMenu}>
         {isOpen ? '✖' : '☰'} {/* Hamburger icon */}
@@ -43,11 +43,21 @@ export default function TopBar() {
         <i className="fa-regular fa-user my-3" onClick={handleOpenModal}> تسجيل الدخول</i> {/* Trigger modal on click */}
       </div>
 
-      {/* Search Bar */}
-      <div className="search-bar d-flex align-items-center">
+      <div className="input-group  w-50">
+        <input
+          type="text"
+          className="form-control rounded-5 search-bar"
+          placeholder="ابحث عن منتجاتك..."
+        />
+        <span className="input-group-text search-icon">
+          <i className="fas fa-search"></i>
+        </span>
+      </div>
+
+      {/* <div className="search-bar d-flex align-items-center">
         <input type="text" className="form-control" placeholder="ابحث عن منتجاتك..." />
         <button className="btn btn-outline-light">ابحث</button>
-      </div>
+      </div> */}
 
       {/* Language Section - Always visible */}
       <div className="lang d-flex align-items-center">

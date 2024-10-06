@@ -24,15 +24,26 @@
   width: 100%; 
 }
 
-.search-bar button {
-  background-color: #007bff;
-  transition: all 0.5s;
+.input-group {
+  position: relative;
+}
+
+.input-group .form-control {
+  padding-right: 40px; /* Give space for the icon */
+}
+
+.input-group-text.search-icon {
+  position: absolute;
+  right: 10px; /* Adjust as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
   border: none;
-  border-radius: 0 5px 5px 0;
-  padding: 5px 10px; 
-  color: white;
-  width: 100%; 
-  cursor: pointer;
+}
+
+.input-group-text i {
+  color: #09c; /* Icon color */
+  font-size: 18px; /* Icon size */
 }
 
 .search-bar button:hover {

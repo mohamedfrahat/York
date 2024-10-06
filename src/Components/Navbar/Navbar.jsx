@@ -14,9 +14,9 @@ export default function Navbar() {
     <div className='nav-bar app-container'>
   
 
-      {/* Button to toggle the nav links */}
-      <button className="menu-button mx-2 d-md-none" onClick={toggleMenu}>
-        {isOpen ? '✖' : '☰'} {/* Hamburger icon */}
+     
+      <button className="menu-button   d-md-none" onClick={toggleMenu}>
+        {isOpen ? '✖' : '☰'} 
       </button>
 
       <div className={`nav-links ${isOpen ? 'open' : ''}`}>
