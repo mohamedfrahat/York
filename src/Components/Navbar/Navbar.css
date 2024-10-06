@@ -1,15 +1,15 @@
 .nav-bar {
   position: sticky;
-  top: 0; /* Stick to the top */
+  top: 0; 
   z-index: 2222;
-  margin-top: 0; /* Ensure no margin for better sticking */
+  margin-top: 0; 
   padding: 10px;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  background-color: white; /* Add background color to avoid overlap with content */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: add a shadow for better visibility */
+  background-color: white; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
 .logo-container img {
@@ -34,13 +34,13 @@
   transition: background-color 0.3s ease;
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
+
+@media (max-width: 786px) {
   .nav-links {
-    display: none; /* Hide by default */
+    display: none; 
     flex-direction: column;
     position: absolute;
-    top: 49px; /* Position below the navbar */
+    top: 49px; 
     left: 0;
     right: 0;
     background-color: white;

@@ -8,20 +8,22 @@ import slider2 from '../../Images/0001156_ducted-split_520.webp';
 import slider3 from '../../Images/0001157_packaged_520.webp';
 import slider4 from '../../Images/0001158_air-curtains_520.webp';
 import Recommended from '../Recommended/Recommended';
-
-
+import Loading from '../Loading/Loading'; 
 export default function SingleProduct() {
     const { id } = useParams();
     const [product, setProduct] = useState(null);
     const [selectedImage, setSelectedImage] = useState('');
+    const [loading, setLoading] = useState(true); 
 
     const fetchProduct = async () => {
         try {
             const { data } = await axios.get(`https://dummyjson.com/products/${id}`);
             setProduct(data);
-            setSelectedImage(data.thumbnail); // Set the default image to the main product image
+            setSelectedImage(data.thumbnail); 
+            setLoading(false);
         } catch (error) {
             console.error('Error fetching product:', error);
+            setLoading(false); 
         }
     };
 
@@ -29,16 +31,17 @@ export default function SingleProduct() {
         fetchProduct();
     }, [id]);
 
-    if (!product) return <div>Loading...</div>;  
+  
+    if (loading) return <Loading large={true} />;
 
-    // Placeholder for additional images, normally you would fetch these or have them in your product data
+    
     const additionalImages = [
-        slider4,  // Main image,
-        slider1, // Sample image 1
-        product.thumbnail, // Sample image 2
-        slider2, // Sample image 3
-        slider3, // Sample image 4
-    ]
+        slider4,  
+        slider1, 
+        product.thumbnail, 
+        slider2, 
+        slider3, 
+    ];
 
     const productSchema = {
         "@context": "https://schema.org",
@@ -46,7 +49,6 @@ export default function SingleProduct() {
         "name": product.title,
         "image": product.thumbnail,
         "description": product.description,
-
         "brand": {
             "@type": "Brand",
             "name": "York"
@@ -86,7 +88,9 @@ export default function SingleProduct() {
                         <p className="price">EGP {product.price}</p>
                         <p className="description">{product.description}</p>
                         <button className="btn btn-primary add-to-cart">Add to Cart</button>
-                        <p className="stock-info"><img src="https://f.nooncdn.com/mpcms/EN0001/assets/80299f90-dd89-4c69-a3d3-19c884d5fc05.png" width={20} height={20}/> Only {product.stock} left in stock</p>
+                        <p className="stock-info">
+                            <img src="https://f.nooncdn.com/mpcms/EN0001/assets/80299f90-dd89-4c69-a3d3-19c884d5fc05.png" width={20} height={20}/> Only {product.stock} left in stock
+                        </p>
 
                         <Helmet>
                             <meta charSet="utf-8" />
@@ -95,11 +99,12 @@ export default function SingleProduct() {
                             <script type="application/ld+json">
                                 {JSON.stringify(productSchema)}
                             </script>
+                            
                         </Helmet>
                     </div>
                 </div>
             </div>
-            <Recommended/>
+            <Recommended />
         </div>
     );
 }

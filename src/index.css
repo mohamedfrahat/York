@@ -10,6 +10,9 @@ a{
   text-decoration: none;
   color: inherit;
 }
+.app-container{
+  padding: 0 1rem;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

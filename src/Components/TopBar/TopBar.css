@@ -1,11 +1,10 @@
 .Topbar {
   background-color: #F3F3F3;
-  padding: 10px;
 }
 
 .topbar-icons i {
-  transition: all .5s;
-  padding: 0 10px ;
+  transition: all 0.5s;
+  padding: 0 5px; 
   cursor: pointer;
 }
 
@@ -14,24 +13,25 @@
 }
 
 .roadblock {
-  margin: 0 10px;
-  font-size: 1.5rem;
+  margin: 0 5px; 
+  font-size: 1rem; 
 }
 
 .search-bar input {
   border: 1px solid #ccc;
   border-radius: 5px 0 0 5px;
   padding: 5px 10px;
-  min-width: 200px;
+  width: 100%; 
 }
 
 .search-bar button {
   background-color: #007bff;
-  transition: all .5s;
+  transition: all 0.5s;
   border: none;
   border-radius: 0 5px 5px 0;
-  padding: 5px 15px;
+  padding: 5px 10px; 
   color: white;
+  width: 100%; 
   cursor: pointer;
 }
 
@@ -41,35 +41,55 @@
 }
 
 .lang img {
-  width: 30px;
-  height: 20px;
-  margin-left: 10px;
+  width: 20px; 
+  height: 15px;
+  margin-left: 5px;
 }
 
-/* Hide icons on small screens and display dropdown when toggled */
-@media (max-width: 768px) {
-  .topbar-icons {
-      display: none; /* Hide by default */
+
+@media (max-width: 786px) {
+  .Topbar {
+    padding: 5px; 
   }
 
-  .topbar-icons{
-    display: none; /* Hide by default */
-    flex-direction: column; /* Stack links vertically */
-    position: absolute; /* Absolute positioning for dropdown */
+  .topbar-icons i {
+    padding: 0 5px; 
+    font-size: 1.2rem; 
+  }
+
+  .topbar-icons {
+    display: none;
+    flex-direction: column;
+    position: absolute;
     z-index: 22222;
-    top: 60px; /* Position below the navbar */
+    top: 50px;
     left: 0;
     right: 0;
-    background-color: white; /* Background color for dropdown */
-    max-height: 0; /* Start closed */
-    overflow: hidden; /* Hide overflow */
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
   }
 
   .topbar-icons.open {
-    display: flex; /* Show when open */
-    max-height: 300px; /* Adjust max height as needed */
+    display: flex;
+    max-height: 300px;
   }
- .roadblock{
-  display: none; 
- }
+
+  .roadblock {
+    display: none; 
+  }
+
+ 
+  .search-bar input {
+    min-width: 100px; 
+    width: 100%;
+    font-size: 0.9rem; 
+  }
+
+  .search-bar button {
+    padding: 5px 5px; 
+    font-size: 0.9rem; 
+    width: 100%; 
+  }
 }

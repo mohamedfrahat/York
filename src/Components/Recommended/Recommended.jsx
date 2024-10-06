@@ -11,19 +11,19 @@ export default function Recommended () {
     const responsive = {
         superLargeDesktop: {
             breakpoint: { max: 4000, min: 3000 },
-            items: 6 // Show 7 items on large screens
+            items: 6 
         },
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 6 // Show 7 items on desktop screens
+            items: 6 
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
-            items: 3 // Show 3 items on tablet screens
+            items: 3 
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
-            items: 1 // Show 1 item on mobile screens
+            items: 1 
         }
     };
 

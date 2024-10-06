@@ -3,9 +3,9 @@
     margin-top: 10px;
 
     background-color: #F1F4FD;
-    /* Optional: light background color */
+  
     border-radius: 8px;
-    /* Optional: rounded corners */
+ 
 }
 
 .product {
@@ -15,17 +15,17 @@
     border-radius: 10px;
     background-color: white;
     color: black;
-    /* Ensure a consistent background color */
+   
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* Optional: add a subtle shadow */
+  
     position: relative;
-    /* Ensure wish icon stays within the bounds */
+  
 }
 
 .wish {
     position: absolute;
     top: 10px;
-    /* Add spacing from the top */
+ 
     right: 10px;
     z-index: 20;
     transition: all 0.5s;
@@ -36,7 +36,7 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     color: #dc3545;
-    /* Red color for the wish icon */
+ 
 }
 
 .product:hover {
@@ -51,17 +51,17 @@
     transition: all 0.5s;
     border-radius: 10px 10px 0 0;
    
-    /* Ensure the image has rounded corners */
+   
 }
 
 .product-img {
     position: relative;
     padding: 10px;
-    /* Add some padding inside the image container */
+  
     background-color: #f8f9fa;
-    /* Optional: background for the image area */
+  
     border-bottom: 1px solid #ddd;
-    /* Separate the image from the content */
+  
 }
 
 .rate {
@@ -109,17 +109,16 @@
     transform: translateY(150%);
     background-color: #09c;
     color: white;
-    /* Ensure the text is visible on the button */
+   
     border: none;
-    /* Remove the default border */
-    /* border-radius: 0 0 10px 10px; Match the border radius with the product */
+   
     padding: 10px;
-    /* Add padding for a better look */
+  
     transition: all 0.5s;
     position: absolute;
     bottom: 0;
     width: 100%;
-    /* Make the button take full width */
+  
 }
 
 .product:hover .cart-btn {

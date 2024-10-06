@@ -10,6 +10,29 @@
     object-fit: cover;
 }
 
+
+@media (max-width: 1024px) {
+    .slide img {
+        max-height: 400px;
+        height: 40vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .slide img {
+        max-height: 300px;
+        height: 30vh;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .slide img {
+        max-height: 200px;
+        height: 25vh;
+    }
+}
+
 .caption {
     position: absolute;
     top: 50%;

@@ -27,7 +27,7 @@ const Slider = () => {
     };
 
     return (
-        <div className="slider  ">
+        <div className="slider app-container  ">
             <Carousel
                 responsive={responsive}
                 autoPlay={true}
