@@ -1,18 +1,18 @@
-import React from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Layout from './Components/Layout/Layout'
-import Home from './Components/Home/Home'
-import Split from './Components/Split/Split'
-import Window from './Components/Window/Window'
-import SingleProduct from './Components/SingleProduct/SingleProduct'
-import FreeStand from './Components/FreeStand/FreeStand'
-import DuctedSplit from './Components/DuctedSplit/DuctedSplit'
-import Packaged from './Components/Packaged/Packaged'
-import AirCurtains from './Components/AirCurtains/AirCurtains'
+import React, { Suspense, lazy } from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Layout from './Components/Layout/Layout';
+import Home from './Components/Home/Home';
 
+// Lazy load components
+const Split = lazy(() => import('./Components/Split/Split'));
+const Window = lazy(() => import('./Components/Window/Window'));
+const SingleProduct = lazy(() => import('./Components/SingleProduct/SingleProduct'));
+const FreeStand = lazy(() => import('./Components/FreeStand/FreeStand'));
+const DuctedSplit = lazy(() => import('./Components/DuctedSplit/DuctedSplit'));
+const Packaged = lazy(() => import('./Components/Packaged/Packaged'));
+const AirCurtains = lazy(() => import('./Components/AirCurtains/AirCurtains'));
 
 export default function App() {
-
   let router = createBrowserRouter([{
     path: '', element: <Layout />, children: [
       { index: true, element: <Home /> },
@@ -23,15 +23,14 @@ export default function App() {
       { path: '/Packaged', element: <Packaged /> },
       { path: '/AirCurtains', element: <AirCurtains /> },
       { path: '/SingleProduct/:id', element: <SingleProduct /> },
-
-     
-
     ]
+  }]);
 
-  }])
   return (
     <div>
+      <Suspense fallback={<div>Loading...</div>}>
         <RouterProvider router={router}></RouterProvider>
+      </Suspense>
     </div>
-  )
+  );
 }
