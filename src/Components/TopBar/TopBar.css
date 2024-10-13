@@ -1,0 +1,106 @@
+.Topbar {
+  background-color: #F3F3F3;
+}
+
+.topbar-icons i {
+  transition: all 0.5s;
+  padding: 0 5px; 
+  cursor: pointer;
+}
+
+.topbar-icons i:hover {
+  color: #007bff;
+}
+
+.roadblock {
+  margin: 0 5px; 
+  font-size: 1rem; 
+}
+
+.search-bar input {
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  padding: 5px 10px;
+  width: 100%; 
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group .form-control {
+  padding-right: 40px;  
+}
+
+.input-group-text.search-icon {
+  position: absolute;
+  right: 10px; 
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+}
+
+.input-group-text i {
+  color: #09c;  
+  font-size: 18px;  
+}
+
+.search-bar button:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+.lang img {
+  width: 20px; 
+  height: 15px;
+  margin-left: 5px;
+}
+
+
+@media (max-width: 786px) {
+  .Topbar {
+    padding: 5px; 
+  }
+
+  .topbar-icons i {
+    padding: 0 5px; 
+    font-size: 1.2rem; 
+  }
+
+  .topbar-icons {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    z-index: 22222;
+    top: 50px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+  }
+
+  .topbar-icons.open {
+    display: flex;
+    max-height: 300px;
+  }
+
+  .roadblock {
+    display: none; 
+  }
+
+ 
+  .search-bar input {
+    min-width: 100px; 
+    width: 100%;
+    font-size: 0.9rem; 
+  }
+
+  .search-bar button {
+    padding: 5px 5px; 
+    font-size: 0.9rem; 
+    width: 100%; 
+  }
+}
